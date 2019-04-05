@@ -7,6 +7,28 @@ var postalCode = extractPostcode(allHotel);
 var hotelToDisplay = [];
 
 
+var request = new XMLHttpRequest();
+
+//We fetch the reviews
+function getReviews(idHotel){
+    request.open('GET', allHotel[i].reviews, true);
+    request.send();
+}
+
+request.onload = function(){
+    var dataFetched = JSON.parse(this.response);    
+    if(request.status >= 200 && request.status < 400){
+        var reviewForParticularHotel = [];
+        dataFetched.forEach(review => { new Review(review.language, review.polarity, review.source, review.text)});
+        //Maybe we use it for smthng
+    }
+    else{
+        console.log('error');
+    }
+}
+
+
+
 
 
 var today = new Date().toISOString().split('T')[0];
@@ -167,6 +189,22 @@ function filterCategory(allHotel, type){
 
 document.getElementById('searchBUTTON').addEventListener('click', function(e){
     e.preventDefault();
+    
+    
+    /*var allAverage = [];
+    for(var i=0; i< allReviews.length; i++)
+    {
+        if(allReviews[i].length == 0)
+            allAverage.push('No reviews');
+        else{
+            var temp = 0;
+            for(var j=0; j< allReviews[i].length; j++)
+                temp+= allReviews[i][j].polarity;
+            allAverage.push(temp/ allReviews[i].length);
+        }
+    }
+    console.log(allAverage); */
+    
     computeHotelToDisplay();
     Display(hotelToDisplay);
 })
@@ -185,6 +223,13 @@ function Hotel(address, postal_code, latitude, longitude, location, name, type, 
     this.imageURL = imageURL;
 }
 
+function Review (language, polarity, source, text){
+    this.language = language;
+    this.polarity = polarity;
+    this.source = source;
+    this.text = text;
+}
+
 function processData(allText) {
     var allTextLines = allText.split('+');
     var lines = [];
@@ -199,4 +244,8 @@ function processData(allText) {
         lines.push(current_hotel);
     }
     return lines;
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
