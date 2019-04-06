@@ -23,7 +23,8 @@
     <link id="switcher" href="css/theme-color/default-theme.css" rel="stylesheet">     
 
     <!-- Main style sheet -->
-    <link href="css/style.css" rel="stylesheet">    
+    <link href="css/style.css" rel="stylesheet">
+      <link href="css/modal.css" rel="stylesheet">
 
    
     <!-- Google Font -->
@@ -256,22 +257,14 @@
               <div class="col-md-2">
                  <div class="aa-single-advance-search">
                   <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
+                    <option value="0" selected>Breakfast options</option>
                   </select>
               </div>
               </div>
               <div class="col-md-2">
                  <div class="aa-single-advance-search">
                   <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
+                    <option value="0" selected>Room types</option>
                   </select>
               </div>
               </div>
@@ -290,7 +283,7 @@
                    
                    
               <div class="aa-single-filter-search">
-                <span>TOTAL PRICE ($)</span>
+                <span>TOTAL PRICE (£)</span>
                 <span>FROM</span>
                 <span id="skip-value-lower" class="example-val">30.00</span>
                 <span>TO</span>
@@ -309,10 +302,13 @@
               <div class="aa-single-filter-search">
                 <form>
                     <label>Check-in: </label>  
-                    <input type="date" id='check-in-input'/> </br>
+                    <input type="date" id='check-in-input'/> 
                     <label>Check-out: </label>
                     <input type="date" id='check-out-input'/>
                 </form>
+                  <div>Count as: 
+                  <span id='span-nb-nights'>1</span> night(s)
+                    </div>
                   
                 
               </div>
@@ -851,6 +847,21 @@ Each day, more than 2,000 room nights are reserved on our platform. So whether t
   </section>
    -->
 
+      <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" id='closeReview'>&times;</span>
+    <h1 id='title-hotel-modal'>Hotel name</h1>
+    <h3>Reviews: </h3>
+    <div id='div-reviews-modal'></div>
+  </div>
+
+</div>
+      
+      
+      
   <!-- Footer -->
   <footer id="aa-footer">
     <div class="container">
