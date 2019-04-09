@@ -141,88 +141,40 @@
       <div class="aa-top-slider">
         <!-- Top slider single slide -->
           
-          
-        <div class="aa-top-slider-single">
-          <img src="img/slider/3.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">HOTEL 1</span>
-            <h2 class="aa-top-slider-title">Characteristic</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>ADDRESS</p>
-            <span class="aa-top-slider-off">DISCOUNT</span>
-            <p class="aa-top-slider-price">$PRICE</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
-          
-          
-          
+        
         <!-- / Top slider single slide -->
         <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
           <img src="img/slider/2.jpg" alt="img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">HOTEL 2</span>
-            <h2 class="aa-top-slider-title">Characteristic</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>ADDRESS</p>
+            <span class="aa-top-slider-catg">Hôtel Minerve Paris</span>
+            <h2 class="aa-top-slider-title">3 stars hotel</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>13 Rue des Écoles</p>
             <span class="aa-top-slider-off">DISCOUNT</span>
-            <p class="aa-top-slider-price">$PRICE</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <p class="aa-top-slider-price">£168 per night</p>
+            <!--<a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a> -->
           </div>
           <!-- / Top slider content -->
         </div>
           
-          
-        <!-- / Top slider single slide -->
-        <!-- Top slider single slide -->
-        <div class="aa-top-slider-single">
-          <img src="img/slider/1.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">HOTEL 3</span>
-            <h2 class="aa-top-slider-title">Characteristic</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>ADDRESS</p>
-            <span class="aa-top-slider-off">DISCOUNT</span>
-            <p class="aa-top-slider-price">$PRICE</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
-        <!-- / Top slider single slide -->   
           
          <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
           <img src="img/slider/5.jpg" alt="img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">HOTEL 4</span>
-            <h2 class="aa-top-slider-title">Characteristic</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>ADDRESS</p>
+            <span class="aa-top-slider-catg">Hôtel Napoléon</span>
+            <h2 class="aa-top-slider-title">5 stars hotel</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>40 Avenue de Friedland</p>
             <span class="aa-top-slider-off">DISCOUNT</span>
-            <p class="aa-top-slider-price">$PRICE</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <p class="aa-top-slider-price">£174 per night</p>
+            <!--<a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>-->
           </div>
           <!-- / Top slider content -->
         </div>
           
           
-        <!-- / Top slider single slide -->        
-         <!-- Top slider single slide -->
-        <div class="aa-top-slider-single">
-          <img src="img/slider/4.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">HOTEL 5</span>
-            <h2 class="aa-top-slider-title">Characteristic</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>ADDRESS</p>
-            <span class="aa-top-slider-off">DISCOUNT</span>
-            <p class="aa-top-slider-price">$PRICE</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
-        </div>
       </div>
     </div>
   </section>
@@ -239,8 +191,11 @@
                 
                   
                 <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Type Your Location">
-                    
+                  <form autocomplete="off">
+                      <div class="autocomplete" style="width:100%;">
+                          <input id="InputHotelName" type="text" name="myCountry" placeholder="Hotel name">
+                      </div>
+                    </form>         
                 </div>
                   
               </div>
@@ -256,15 +211,23 @@
                 
               <div class="col-md-2">
                  <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Breakfast options</option>
+                  <select id='breakfast-selection'>
+                    <option value="0" selected>Breakfast?</option>
+                    <option value="yes" >Yes</option>
+                    <option value="no" >No</option>  
                   </select>
               </div>
               </div>
               <div class="col-md-2">
                  <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Room types</option>
+                  <select id='bedding-selection'>
+                    <option value="0" selected>Bedding options</option>
+                    <option value="B">One double bed</option>
+                    <option value="b">One single bed</option>
+                    <option value="Bb">One double bed, one single bed</option>
+                    <option value="bb">Two single beds</option>
+                    <option value="bbb">Three single beds</option>
+                    <option value="BB">Two double beds</option>  
                   </select>
               </div>
               </div>
@@ -302,7 +265,7 @@
               <div class="aa-single-filter-search">
                 <form>
                     <label>Check-in: </label>  
-                    <input type="date" id='check-in-input'/> 
+                    <input type="date" id='check-in-input'/> </br>
                     <label>Check-out: </label>
                     <input type="date" id='check-out-input'/>
                 </form>
@@ -346,7 +309,9 @@
         <div class="aa-title">
           <h2>Hotel Selection</h2>
           <span></span>
-          <p>Whatever accommodation you’re looking for, we’ve got it…</p>         
+          <p>Whatever accommodation you’re looking for, we’ve got it…</p>
+            <p id="nb-results"></p>
+            <span></span>
         </div>
         <div class="aa-latest-properties-content">
           <div class="row" id='div-display-hotel'>
@@ -860,6 +825,17 @@ Each day, more than 2,000 room nights are reserved on our platform. So whether t
 
 </div>
       
+<!-- The Modal -->
+<div id="modal-book" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" id='closeBooking'>&times;</span>
+    <h1 id='title-hotel-Bookingmodal'>Hotel name</h1>
+    <div id='div-booking-modal'></div>
+  </div>
+
+</div>
       
       
   <!-- Footer -->
@@ -916,8 +892,8 @@ Each day, more than 2,000 room nights are reserved on our platform. So whether t
   <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
-      <!-- Custom hotel js -->
-      <script src="js/hotel_list.js"></script> 
+  <script src="js/hotel_list.js"></script> 
+  <script src="js/autocomplete.js"></script> 
 
   </body>
 </html>
