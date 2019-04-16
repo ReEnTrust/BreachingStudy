@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" />
   <!-- Theme color -->
   <link id="switcher" href="css/theme-color/default-theme.css" rel="stylesheet">
+  <!-- Theme for swal -->
+
 
   <!-- Main style sheet -->
   <link href="css/style.css" rel="stylesheet">
@@ -142,21 +144,7 @@
       <!-- Top slider single slide -->
 
 
-      <!-- / Top slider single slide -->
-      <!-- Top slider single slide -->
-      <div class="aa-top-slider-single">
-        <img src="img/slider/2.jpg" alt="img">
-        <!-- Top slider content -->
-        <div class="aa-top-slider-content">
-          <span class="aa-top-slider-catg">Hôtel Minerve Paris</span>
-          <h2 class="aa-top-slider-title">3 stars hotel</h2>
-          <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>13 Rue des Écoles</p>
-          <span class="aa-top-slider-off">DISCOUNT</span>
-          <p class="aa-top-slider-price">£168 per night</p>
-          <!--<a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a> -->
-        </div>
-        <!-- / Top slider content -->
-      </div>
+
 
 
       <!-- Top slider single slide -->
@@ -170,6 +158,23 @@
           <span class="aa-top-slider-off">DISCOUNT</span>
           <p class="aa-top-slider-price">£174 per night</p>
           <!--<a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>-->
+        </div>
+        <!-- / Top slider content -->
+      </div>
+
+
+      <!-- / Top slider single slide -->
+      <!-- Top slider single slide -->
+      <div class="aa-top-slider-single">
+        <img src="img/slider/2.jpg" alt="img">
+        <!-- Top slider content -->
+        <div class="aa-top-slider-content">
+          <span class="aa-top-slider-catg">Hôtel Minerve Paris</span>
+          <h2 class="aa-top-slider-title">3 stars hotel</h2>
+          <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>13 Rue des Écoles</p>
+          <span class="aa-top-slider-off">DISCOUNT</span>
+          <p class="aa-top-slider-price">£168 per night</p>
+          <!--<a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a> -->
         </div>
         <!-- / Top slider content -->
       </div>
@@ -819,7 +824,9 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close" id='closeReview'>&times;</span>
-    <h1 id='title-hotel-modal'>Hotel name</h1>
+    <h1 id='title-hotel-modal' style="color: #59ABE3;">Hotel name</h1>
+
+
     <h3>Reviews: </h3>
     <div id='div-reviews-modal'></div>
   </div>
@@ -834,11 +841,20 @@
     <span class="close" id='closeBooking'>&times;</span>
     <h1 id='title-hotel-Bookingmodal'>Hotel name</h1>
 
-    <div style="width: 100%; overflow: hidden;">
-      <div style="width: 40%; float: left;" id='div-img-hotel'> </div>
+    <div style="width: 100%; overflow: hidden; min-height: 420px" class='border-booking-content'>
 
-      <div style="margin-left: 42%;">
-        <div class='border-booking-content' id='div-booking-modal'></div>
+      <div>
+      <div style="width: 25%; height: 375px; float: left; padding-top: 2%; padding-left: 2%;">
+        <div id="map" style="border-radius: 25px; width:100%; height: 100%; position: relative; overflow: hidden; margin: 0px; padding: 0px;"></div>
+      </div>
+
+      <div style="width: 25%; height: 375px; float: left; padding-top: 2%; padding-left: 2%;">
+        <div id='div-img-hotel' > </div>
+      </div>
+      </div>
+
+      <div style="margin-left: 52%; background: white; min-height: 375px; border-radius: 25px; padding: 10px;">
+        <div id='div-booking-modal'></div>
         <div id='div-booking-button'></div>
       </div>
     </div>
@@ -906,6 +922,8 @@
 <script src="js/custom.js"></script>
 <script src="js/hotel_list.js"></script>
 <script src="js/autocomplete.js"></script>
+<!-- Loading the API from GOOGLE -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUTJCkdYZxr1Y_WMZTpJzcg7jI_JlyxJI"></script>
 
 </body>
 </html>

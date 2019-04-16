@@ -788,6 +788,8 @@ img {
   float: left;
   margin-top: 30px;
   width: 100%;
+  height: 500px;
+  border: 1px solid #ddd;
   position: relative;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -819,7 +821,7 @@ img {
 }
 .aa-properties-item .aa-properties-item-content {
   background-color: #fff;
-  border: 1px solid #ddd;
+
   border-top: none;
   display: inline;
   float: left;
