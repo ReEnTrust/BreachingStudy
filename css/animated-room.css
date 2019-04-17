@@ -1,0 +1,20 @@
+.animated-room.bigger{
+    -webkit-transition: 1.5s;
+    -moz-transition: 1.5s;
+    -ms-transition: 1.5s;
+    -o-transition: 1.5s;
+    transition: 1.5s;
+    font-weight: 900;
+    font-size: 40px !important;
+}
+
+
+.animated-room.smaller{
+    -webkit-transition: 1.5s;
+    -moz-transition: 1.5s;
+    -ms-transition: 1.5s;
+    -o-transition: 1.5s;
+    transition: 1.5s;
+    font-weight: normal;
+    font-size: 15px !important;
+}

@@ -72,10 +72,6 @@ request.onload = function(){
             let reviewTitle = document.createElement('h5');
             reviewTitle.innerHTML='Review '+i+ ' ('+dataFetched[i].language+')';
             let paraReview = document.createElement('p');
-            paraReview.style.width = "50%";
-            paraReview.style.padding = "15px";
-            paraReview.style.marginLeft = "20%";
-            paraReview.style.borderRadius = "25px";
             paraReview.setAttribute('class', 'paraReviewStyle');
             paraReview.innerHTML = dataFetched[i].text;
             div_oneReview.appendChild(reviewTitle);
@@ -185,8 +181,9 @@ function addHotelSection(Hotel, display_case){
 
     let labelHotel = document.createElement('div');
     let numberHotel = document.createElement('span');
+    numberHotel.setAttribute('class','animated-room');
     let RoomAvailable = document.createElement('span');
-    RoomAvailable.innerHTML = ' Room Available';
+    RoomAvailable.innerHTML = ' Rooms Available';
     if(Hotel.alwaysTop != 'true'){
         labelHotel.setAttribute('class', 'aa-tag for-rent');
         numberHotel.innerHTML = Hotel.roomAvailable;
@@ -204,11 +201,19 @@ function addHotelSection(Hotel, display_case){
     setInterval(function() {
         // Display the result in the element with id="demo"
         numberHotel.innerHTML = numberHotel.innerHTML - 1;
-
+        numberHotel.classList.remove('smaller');
+        numberHotel.classList.add('bigger');
         // If the count down is finished, write some text
         if (numberHotel.innerHTML < 5) {
             numberHotel.innerHTML = Hotel.roomAvailable;
         }
+
+        setTimeout(function(){
+            numberHotel.classList.remove('bigger');
+            numberHotel.classList.add('smaller');
+        }, 1500);
+
+
     }, ((Math.random()*10000 )+ 2500));
 
 
@@ -629,6 +634,7 @@ function addHotelSection(Hotel, display_case){
                         formPersonal.innerHTML+='<br>';
                         divBooking.appendChild(formPersonal);
                         let noticeP = document.createElement('p');
+                        noticeP.style.margin = "20px";
                         noticeP.innerHTML = '<strong>Note:</strong> All the fields are required and must be filled.';
                         divBooking.appendChild(noticeP);
                         divButtonBooking.innerHTML = '';
