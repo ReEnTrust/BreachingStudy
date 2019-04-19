@@ -228,12 +228,10 @@
               <div class="aa-single-advance-search">
                 <select id='bedding-selection'>
                   <option value="0" selected>Room type</option>
-                  <option value="B">One double bed</option>
-                  <option value="b">One single bed</option>
-                  <option value="Bb">One double bed, one single bed</option>
-                  <option value="bb">Two single beds</option>
-                  <option value="bbb">Three single beds</option>
-                  <option value="BB">Two double beds</option>
+                  <option value="single">Single</option>
+                  <option value="double">Double</option>
+                  <option value="twin">Twin</option>
+                  <option value="family">Family</option>
                 </select>
               </div>
             </div>
@@ -252,7 +250,7 @@
 
 
               <div class="aa-single-filter-search">
-                <span>TOTAL PRICE (£)</span>
+                <span>Room price per night (£)</span>
                 <span>FROM</span>
                 <span id="skip-value-lower" class="example-val">30.00</span>
                 <span>TO</span>
@@ -270,13 +268,13 @@
             <div class="col-md-6">
               <div class="aa-single-filter-search">
                 <form>
-                  <label>Check-in: </label>
-                  <input type="date" id='check-in-input'/> </br>
-                  <label>Check-out: </label>
+                  <label>&nbsp;Check in:&nbsp;&nbsp;</label>
+                  <input type="date" id='check-in-input'/></br>
+                  <label>Check out: </label>
                   <input type="date" id='check-out-input'/>
                 </form>
-                <div>Count as:
-                  <span id='span-nb-nights'>1</span> night(s)
+                <div>
+                  Number of nights: <span id='span-nb-nights'>1</span>
                 </div>
 
 
@@ -313,7 +311,7 @@
   <div class="container">
     <div class="aa-latest-property-area">
       <div class="aa-title">
-        <h2>Hotel Selection</h2>
+        <h2 id="title-hotel-selection-part">Hotel Selection</h2>
         <span></span>
         <p>Whatever accommodation you’re looking for, we’ve got it…</p>
         <p id="nb-results"></p>
@@ -392,7 +390,7 @@
                     <span class="fa fa-home"></span>
                   </div>
                   <div class="aa-single-service-content">
-                    <h4><a href="#">Large Catalog</a></h4>
+                    <h4><a href="#">Large Catalogue</a></h4>
                     <p>We offer a large set of amazing hotel including scenic lookouts, marinas and famous hotels.</p>
                   </div>
                 </div>
@@ -844,7 +842,7 @@
     <div style="width: 100%; overflow: hidden; min-height: 420px" class='border-booking-content'>
 
       <div>
-      <div style="width: 25%; height: 375px; float: left; padding-top: 2%; padding-left: 2%;">
+      <div style="width: 35%; height: 375px; float: left; padding-top: 2%; padding-left: 2%;">
         <div id="map" style="border-radius: 25px; width:100%; height: 100%; position: relative; overflow: hidden; margin: 0px; padding: 0px;"></div>
       </div>
 
@@ -853,7 +851,7 @@
       </div>
       </div>
 
-      <div style="margin-left: 52%; background: white; min-height: 375px; border-radius: 25px; padding: 10px;">
+      <div style="margin-left: 62%; background: white; min-height: 375px; border-radius: 25px; padding: 10px;">
         <div id='div-booking-modal'></div>
         <div id='div-booking-button'></div>
       </div>
