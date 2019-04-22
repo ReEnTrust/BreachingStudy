@@ -18,7 +18,7 @@ const checkout = document.getElementById('check-out-input');
 const searchButton = document.getElementById('searchBUTTON');
 const roomSlection = document.getElementById('breakfast-selection');
 const priceBreakfast = 110;
-const duration = 1000 * 300;
+const duration = 1000 * 60 * 5;
 
 
 /** Initialising the check-in and check-out inputs **/
