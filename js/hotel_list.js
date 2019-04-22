@@ -20,6 +20,21 @@ const roomSlection = document.getElementById('breakfast-selection');
 const priceBreakfast = 110;
 const duration = 1000 * 60 * 5;
 
+/** Cookies acceptance **/
+if (-1 === document.cookie.indexOf('returning=true')) {
+
+    // run only if cookie not found (-1 means not found)
+    swal({
+        title: "Notice",
+        text: "This website uses cookies to give you the most relevant experience. By using this website, you accept to receive all cookies on this website.",
+        icon: "warning",
+        dangerMode: true,
+    });
+
+
+    document.cookie = 'returning=true'; // set cookie
+}
+
 
 /** Initialising the check-in and check-out inputs **/
 checkin.setAttribute('min', today);
