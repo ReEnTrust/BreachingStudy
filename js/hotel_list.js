@@ -18,6 +18,7 @@ const checkout = document.getElementById('check-out-input');
 const searchButton = document.getElementById('searchBUTTON');
 const roomSlection = document.getElementById('breakfast-selection');
 const priceBreakfast = 110;
+const duration = 1000 * 300;
 
 
 /** Initialising the check-in and check-out inputs **/
@@ -451,7 +452,7 @@ function addHotelSection(Hotel, display_case){
         let spanTimeRemaining = document.createElement('span');
         spanTimeRemaining.setAttribute("style", "color: red;");
         price.appendChild(spanTimeRemaining);
-        let countDownDate = new Date().getTime() + (10000*60);
+        let countDownDate = new Date().getTime() + duration;
 
         setInterval(function() {
 
