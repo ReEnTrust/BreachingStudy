@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed41b254-72f2-468d-aea0-18eb3d73c837" name="Default Changelist" comment="Refactoring of the code, changed the number of stars, changing the search options">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/autocomplete.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/hotel_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/hotel_list.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -14,12 +16,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12208">
-              <caret line="853" column="32" selection-start-line="853" selection-start-column="32" selection-end-line="853" selection-end-column="32" />
+            <state relative-caret-position="6258">
+              <caret line="430" column="38" lean-forward="true" selection-start-line="430" selection-start-column="38" selection-end-line="430" selection-end-column="38" />
               <folding>
                 <element signature="e#9608#9614#0" expanded="true" />
                 <element signature="e#9623#9629#0" expanded="true" />
@@ -28,7 +30,26 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/hotel_list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="632" column="81" selection-start-line="632" selection-start-column="81" selection-end-line="632" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/autocomplete.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -44,8 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>30</find>
-      <find>Pro</find>
       <find>TIME</find>
       <find>map</find>
       <find>initMap</find>
@@ -74,6 +93,8 @@
       <find>revie</find>
       <find>accomo</find>
       <find>Cata</find>
+      <find>autocom</find>
+      <find>filterna</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -87,6 +108,7 @@
         <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/css/modal.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/autocomplete.js" />
         <option value="$PROJECT_DIR$/js/hotel_list.js" />
       </list>
     </option>
@@ -102,6 +124,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,7 +146,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -171,11 +193,12 @@
       <workItem from="1555666031205" duration="9972000" />
       <workItem from="1555922455220" duration="1124000" />
       <workItem from="1555935269613" duration="651000" />
+      <workItem from="1556116110781" duration="1911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36785000" />
+    <option name="totallyTimeSpent" value="38696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1279" height="725" extended-state="0" />
@@ -248,17 +271,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/hotel_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12208">
-          <caret line="853" column="32" selection-start-line="853" selection-start-column="32" selection-end-line="853" selection-end-column="32" />
+        <state relative-caret-position="6258">
+          <caret line="430" column="38" lean-forward="true" selection-start-line="430" selection-start-column="38" selection-end-line="430" selection-end-column="38" />
           <folding>
             <element signature="e#9608#9614#0" expanded="true" />
             <element signature="e#9623#9629#0" expanded="true" />
@@ -267,7 +283,22 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/autocomplete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/hotel_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="632" column="81" selection-start-line="632" selection-start-column="81" selection-end-line="632" selection-end-column="81" />
         </state>
       </provider>
     </entry>
