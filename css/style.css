@@ -813,6 +813,15 @@ img {
   left: 15px;
   top: -15px;
 }
+
+.aa-featured{
+  color: #fff;
+  padding: 6px 10px;
+  position: absolute;
+  left: 200px;
+  top: -15px;
+}
+
 .aa-properties-item .for-rent {
   background-color: #20ceb3;
 }
