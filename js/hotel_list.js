@@ -3,6 +3,7 @@ var hotelListString= "13 Rue des Écoles;83269;48.8477957;2.3515231;Paris;Hotel 
 
 const allHotel = processData(hotelListString);
 const typeOfHotel = extractTypes(allHotel);
+const nameOfHotel = extractNames(allHotel);
 var hotelToDisplay = [];
 var nbDays = 1;
 var nbRooms = 1;
@@ -11,6 +12,7 @@ const modal = document.getElementById('myModal');
 const btnClose = document.getElementById('closeReview');
 const modalBooking = document.getElementById('modal-book');
 const btnCloseBooking = document.getElementById('closeBooking');
+const InputHotelNam = document.getElementById("InputHotelName");
 //const NationalityList = ["Afghan", "Albanian", "Algerian", "Argentine", "Argentinian", "Australian", "Austrian", "Bangladeshi", "Belgian", "Bolivian", "Batswana", "Brazilian", "Bulgarian", "Cambodian", "Cameroonian", "Canadian", "Chilean", "Chinese", "Colombian", "Costa Rican", "Croatian", "Cuban", "Czech", "Danish", "Dominican", "Ecuadorian", "Egyptian", "Salvadorian", "English", "Estonian", "Ethiopian", "Fijian", "Finnish", "French", "German", "Ghanaian", "Greek", "Guatemalan", "Haitian", "Honduran", "Hungarian", "Icelandic", "Indian", "Indonesian", "Iranian", "Iraqi", "Irish", "Israeli", "Italian", "Jamaican", "Japanese", "Jordanian", "Kenyan", "Kuwaiti", "Lao", "Latvian", "Lebanese", "Libyan", "Lithuanian", "Malaysian", "Malian", "Maltese", "Mexican", "Mongolian", "Moroccan", "Mozambican", "Namibian", "Nepalese", "Dutch", "New Zealand", "Nicaraguan", "Nigerian", "Norwegian", "Pakistani", "Panamanian", "Paraguayan", "Peruvian", "Philippine", "Polish", "Portuguese", "Romanian", "Russian", "Saudi", "Scottish", "Senegalese", "Serbian", "Singaporean", "Slovak", "South African", "Korean", "Spanish", "Sri Lankan", "Sudanese", "Swedish", "Swiss", "Syrian", "Taiwanese", "Tajikistani", "Thai", "Tongan", "Tunisian", "Turkish", "Ukrainian", "Emirati", "British", "American", "Uruguayan", "Venezuelan", "Vietnamese", "Welsh", "Zambian", "Zimbabwean"];
 const today = new Date().toISOString().split('T')[0];
 const checkin = document.getElementById('check-in-input');
@@ -19,6 +21,12 @@ const searchButton = document.getElementById('searchBUTTON');
 const roomSlection = document.getElementById('breakfast-selection');
 const priceBreakfast = 110;
 const duration = 1000 * 60 * 5;
+const btnsSlider = document.getElementsByClassName("aa-top-slider-btn");
+
+
+
+/** Initiate the autocomplete function and pass along the Hotel array as possible autocomplete values:*/
+autocomplete(InputHotelNam, nameOfHotel);
 
 /** Cookies acceptance **/
 if (-1 === document.cookie.indexOf('returning=true')) {
@@ -168,6 +176,16 @@ function extractTypes(allHotel){
             typeOfHotel.push(allHotel[i].type);
     }
     return typeOfHotel;
+}
+
+/** Function for extracting the names of hotels **/
+function extractNames(allHotel){
+    let namesOfHotels=[];
+    for(let i=0 ; i< allHotel.length; i++){
+        if(!namesOfHotels.includes(allHotel[i].name))
+            namesOfHotels.push(allHotel[i].name);
+    }
+    return namesOfHotels;
 }
 
 /** Function for displaying the hotels in the search results **/
@@ -513,6 +531,15 @@ function addHotelSection(Hotel, display_case){
     display_case.appendChild(div_col);
 }
 
+/** Set up the buttons in the top slider **/
+for(var i=0; i<btnsSlider.length; i++)
+    btnsSlider[i].addEventListener('click',function(e){
+       e.preventDefault();
+        openAndSetUpBookingModal(this.parentNode.childNodes[1].innerHTML)
+    });
+
+
+
 /** Open Booking modal **/
 function openAndSetUpBookingModal(nameHotel){
     //We display the modal
@@ -798,9 +825,8 @@ function computeHotelToDisplay(){
     }
 
     // We filter by name
-    let inputHotelName = document.getElementById('InputHotelName').value;
-    if( ! (inputHotelName === "")){
-        hotelToDisplay = filterName(hotelToDisplay, inputHotelName);
+    if( ! (InputHotelNam.value === "")){
+        hotelToDisplay = filterName(hotelToDisplay, InputHotelNam.value);
     }
 }
 
