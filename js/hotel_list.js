@@ -117,7 +117,21 @@ request.onload = function(){
             reviewTitle.innerHTML='Review '+(i+1)+" ";
             let smiley = document.createElement('i');
             smiley.style.fontSize = "24px";
-            smiley.setAttribute('class', ((parseInt(dataFetched[i].polarity) == 0)? "far fa-frown": ((parseInt(dataFetched[i].polarity) == 10)? "far fa-grin" : "far fa-meh")));
+
+            switch (parseInt(dataFetched[i].polarity)) {
+                case 0:
+                    smiley.setAttribute('class','far fa-frown');
+                    smiley.style.color = "red";
+                    break;
+                case 10:
+                    smiley.setAttribute('class','far fa-grin');
+                    smiley.style.color = "green";
+                    break;
+                default:
+                    smiley.setAttribute('class','far fa-meh');
+                    smiley.style.color = "grey";
+            }
+
             reviewTitle.appendChild(smiley);
             let paraReview = document.createElement('p');
             paraReview.setAttribute('class', 'paraReviewStyle');
