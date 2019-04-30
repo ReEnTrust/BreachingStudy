@@ -7,6 +7,7 @@ const nameOfHotel = extractNames(allHotel);
 var hotelToDisplay = [];
 var nbDays = 1;
 var nbRooms = 1;
+
 const request = new XMLHttpRequest();
 const modal = document.getElementById('myModal');
 const btnClose = document.getElementById('closeReview');
@@ -14,16 +15,31 @@ const modalBooking = document.getElementById('modal-book');
 const btnCloseBooking = document.getElementById('closeBooking');
 const InputHotelNam = document.getElementById("InputHotelName");
 //const NationalityList = ["Afghan", "Albanian", "Algerian", "Argentine", "Argentinian", "Australian", "Austrian", "Bangladeshi", "Belgian", "Bolivian", "Batswana", "Brazilian", "Bulgarian", "Cambodian", "Cameroonian", "Canadian", "Chilean", "Chinese", "Colombian", "Costa Rican", "Croatian", "Cuban", "Czech", "Danish", "Dominican", "Ecuadorian", "Egyptian", "Salvadorian", "English", "Estonian", "Ethiopian", "Fijian", "Finnish", "French", "German", "Ghanaian", "Greek", "Guatemalan", "Haitian", "Honduran", "Hungarian", "Icelandic", "Indian", "Indonesian", "Iranian", "Iraqi", "Irish", "Israeli", "Italian", "Jamaican", "Japanese", "Jordanian", "Kenyan", "Kuwaiti", "Lao", "Latvian", "Lebanese", "Libyan", "Lithuanian", "Malaysian", "Malian", "Maltese", "Mexican", "Mongolian", "Moroccan", "Mozambican", "Namibian", "Nepalese", "Dutch", "New Zealand", "Nicaraguan", "Nigerian", "Norwegian", "Pakistani", "Panamanian", "Paraguayan", "Peruvian", "Philippine", "Polish", "Portuguese", "Romanian", "Russian", "Saudi", "Scottish", "Senegalese", "Serbian", "Singaporean", "Slovak", "South African", "Korean", "Spanish", "Sri Lankan", "Sudanese", "Swedish", "Swiss", "Syrian", "Taiwanese", "Tajikistani", "Thai", "Tongan", "Tunisian", "Turkish", "Ukrainian", "Emirati", "British", "American", "Uruguayan", "Venezuelan", "Vietnamese", "Welsh", "Zambian", "Zimbabwean"];
-const today = new Date().toISOString().split('T')[0];
+const today = new Date();
+const todayISO = today.toISOString().split('T')[0];
 const checkin = document.getElementById('check-in-input');
 const checkout = document.getElementById('check-out-input');
 const searchButton = document.getElementById('searchBUTTON');
 const roomSlection = document.getElementById('breakfast-selection');
 const priceBreakfast = 110;
+const dayDuration = 1000*3600*24;
 const duration = 1000 * 60 * 5;
 const btnsSlider = document.getElementsByClassName("aa-top-slider-btn");
 
 
+/** Returns the next date of the date given **/
+function nextDay(currentDate){
+    let d1 = new Date(currentDate);
+    let nextDay = new Date(d1.getTime() + dayDuration);
+    return nextDay.toISOString().split('T')[0];
+}
+
+/** Returns the next date of the date given **/
+function previousDay(currentDate){
+    let d1 = new Date(currentDate);
+    let previousDay = new Date(d1.getTime() - dayDuration);
+    return previousDay.toISOString().split('T')[0];
+}
 
 /** Initiate the autocomplete function and pass along the Hotel array as possible autocomplete values:*/
 autocomplete(InputHotelNam, nameOfHotel);
@@ -46,8 +62,8 @@ if (-1 === document.cookie.indexOf('returning=true')) {
 
 /** Initialising the check-in and check-out inputs **/
 checkin.setAttribute('min', today);
-checkin.value = today;
-checkout.value = today;
+checkin.value = todayISO;
+checkout.value = nextDay(todayISO);
 checkout.setAttribute('min', checkin.value);
 
 /** Initialising the selection of categories **/
@@ -98,8 +114,11 @@ request.onload = function(){
         for(let i =0 ; i< dataFetched.length; i++){
             let div_oneReview = document.createElement('div');
             let reviewTitle = document.createElement('h5');
-            reviewTitle.innerHTML='Review '+(i+1) +' ['+ ((parseInt(dataFetched[i].polarity) == 0)? "would not recommend": ((parseInt(dataFetched[i].polarity) == 10)? "would recommend" : "neutral")) + ']';
-
+            reviewTitle.innerHTML='Review '+(i+1)+" ";
+            let smiley = document.createElement('i');
+            smiley.style.fontSize = "24px";
+            smiley.setAttribute('class', ((parseInt(dataFetched[i].polarity) == 0)? "far fa-frown": ((parseInt(dataFetched[i].polarity) == 10)? "far fa-grin" : "far fa-meh")));
+            reviewTitle.appendChild(smiley);
             let paraReview = document.createElement('p');
             paraReview.setAttribute('class', 'paraReviewStyle');
             paraReview.innerHTML = dataFetched[i].text;
@@ -118,16 +137,24 @@ request.onload = function(){
 /** When we change the checkin date **/
 checkin.addEventListener('change', function(e){
     e.preventDefault();
+
     let d1 = new Date(checkin.value);
     let d2 = new Date(checkout.value);
-    if(d2 - d1 < 0)
-    {
-        checkout.value = checkin.value;
+
+    if(isNaN(d1)){
+        checkin.value = todayISO;
+        d1 = new Date(checkin.value);
     }
+
+    if(d2 - d1 <= 0)
+    {
+        checkout.value = nextDay(checkin.value);
+    }
+
     checkout.setAttribute('min', checkin.value);
     d2 = new Date(checkout.value);
     let difference = d2.getTime() - d1.getTime();
-    nbDays = Math.round(difference / (1000*3600*24));
+    nbDays = Math.round(difference / (dayDuration));
     setNumberNights(nbDays);
 });
 
@@ -143,6 +170,18 @@ checkout.addEventListener('change', function(e){
     e.preventDefault();
     let d1 = new Date(checkin.value);
     let d2 = new Date(checkout.value);
+
+    if(isNaN(d2)){
+        checkout.value = nextDay(d1);
+        d2 = new Date(checkout.value);
+    }
+
+    if(d2 - d1 <= 0)
+    {
+        checkin.value = previousDay(checkout.value);
+    }
+
+
     let difference = d2.getTime() - d1.getTime();
     nbDays = Math.round(difference / (1000*3600*24));
     setNumberNights(nbDays);
