@@ -91,11 +91,3 @@ function autocomplete(inp, arr) {
       closeAllLists(e.target);
   });
 }
-
-/*An array containing all the country names in the world:*/
-var HotelNamesString = "Hôtel Minerve Paris;Hôtel Napoléon;Murano Urban Resort;Hôtel de L'Europe;Hôtel de la Trémoille;Hôtel Verneuil;Hôtel Victoria - 1 Boulevard Ornano;Champs-Elysees Plaza;Waldorf Arc de Triomphe Hôtel & Spa;Hotel de France;La Villa Maillot & Spa ****;Hôtel Best Western;BLC Design Hotel;Entrée des artistes;Hôtel Wilson Opera;Oops! Hostel;Adagio Bercy Aparthotel;InterContinental;Hotel Cervantes 3*;Hotel Mercure;Quality hotel;Hotel De Belfort Paris;Timhotel;Hotel Littre****;Citadines Hotel;Hôtel Abbatial Saint-Germain;Adagio City Aparthotel Paris Bercy;Alfa Hotel Nation Paris;Hotel de Rocroy;Hotel Ibis;Hôtel Rochester ****;Hôtel Montparnasse-Alésia;B&B Hotel;Ibis Jenmapes;Le Royal Voltaire;Holiday Inn;Chateau De Courtalain;Citéa - Porte de Charenton;Comfort Hotel;Ibis Styles;Etap Hotel Porte D' Orleans;Timhotel;Hotel Louvre-Rivoli;Waytostay;Hotel Napa;Hotel De Turenne;Hi-Matic/Hi-Life;Paris Hotel Gare de Lyon;Centres Internationaux de Séjours à Paris;Best Western Astoria Opera;Hôtel Salomon de Rotschild;Hôtel Médian;The Peninsula Paris;Best Western Premier Trocadero;Quai de la Marne;Hipotel;Timhôtel;Hôtel Eiffel Saint-Charles;Hotel Relais Saint-Charles;Hotel Fiat;Hôtel Crimée;Legend Hotel;Vélib' [16-18];Duplex Belidor;Adagio Access - Porte De Charenton;Hôtel RIBERA;Ibis Budget;Hotel Ares Eiffel;Ibis Budget;Hotel FABRIC;Quality Hotel Opera Saint-Lazare;Holiday Inn Paris - Saint-Germain-des-Prés;Best Western Premier Hotel Pergolese;Citea Residence Paris Porte De Charenton-le-Pont;Terrasse du Printemps Haussman";
-    
-var countries = HotelNamesString.split(';');
-
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("InputHotelName"), countries);

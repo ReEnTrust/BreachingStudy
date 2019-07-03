@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hotel Booking | Home</title>
+  <title>Paris Booking | Home</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
   <!-- Font awesome -->
   <link href="css/font-awesome.css" rel="stylesheet">
+  <!-- Awesome5 icons-->
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <!-- Bootstrap -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <!-- slick slider -->
@@ -27,7 +29,7 @@
   <!-- Main style sheet -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/modal.css" rel="stylesheet">
-
+  <link href="css/animated-room.css" rel="stylesheet">
 
   <!-- Google Font -->
   <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
@@ -99,31 +101,13 @@
         </button>
         <!-- LOGO -->
         <!-- Text based logo -->
-        <a class="navbar-brand aa-logo" href="index.html"> Hotel <span>Booking</span></a>
+        <a class="navbar-brand aa-logo" href="index.html"> Paris <span>Booking</span></a>
         <!-- Image based logo -->
         <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
           <li class="active"><a href="index.html">HOME</a></li>
-
-          <!--
-          <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTIES <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="properties.html">PROPERTIES</a></li>
-            <li><a href="properties-detail.html">PROPERTIES DETAIL</a></li>
-          </ul>
-        </li>
-
-        <li><a href="gallery.html">GALLERY</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">BLOG <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="blog-archive.html">BLOG</a></li>
-            <li><a href="blog-single.html">BLOG DETAILS</a></li>
-          </ul>
-        </li> -->
 
 
           <li><a href="contact.html">CONTACT</a></li>
@@ -152,12 +136,12 @@
         <img src="img/slider/5.jpg" alt="img">
         <!-- Top slider content -->
         <div class="aa-top-slider-content">
-          <span class="aa-top-slider-catg">Hôtel Napoléon</span>
+          <span class="aa-top-slider-catg">Hotel Napoléon</span>
           <h2 class="aa-top-slider-title">5 stars hotel</h2>
           <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>40 Avenue de Friedland</p>
           <span class="aa-top-slider-off">DISCOUNT</span>
           <p class="aa-top-slider-price">£174 per night</p>
-          <!--<a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>-->
+          <a href="#" class="aa-top-slider-btn">BOOK THIS NOW <span class="fa fa-angle-double-right"></span></a>
         </div>
         <!-- / Top slider content -->
       </div>
@@ -169,12 +153,12 @@
         <img src="img/slider/2.jpg" alt="img">
         <!-- Top slider content -->
         <div class="aa-top-slider-content">
-          <span class="aa-top-slider-catg">Hôtel Minerve Paris</span>
+          <span class="aa-top-slider-catg">Hotel Minerve Paris</span>
           <h2 class="aa-top-slider-title">3 stars hotel</h2>
           <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>13 Rue des Écoles</p>
           <span class="aa-top-slider-off">DISCOUNT</span>
           <p class="aa-top-slider-price">£168 per night</p>
-          <!--<a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a> -->
+          <a href="#" class="aa-top-slider-btn">BOOK THIS NOW <span class="fa fa-angle-double-right"></span></a>
         </div>
         <!-- / Top slider content -->
       </div>
@@ -228,12 +212,10 @@
               <div class="aa-single-advance-search">
                 <select id='bedding-selection'>
                   <option value="0" selected>Room type</option>
-                  <option value="B">One double bed</option>
-                  <option value="b">One single bed</option>
-                  <option value="Bb">One double bed, one single bed</option>
-                  <option value="bb">Two single beds</option>
-                  <option value="bbb">Three single beds</option>
-                  <option value="BB">Two double beds</option>
+                  <option value="single">Single</option>
+                  <option value="double">Double</option>
+                  <option value="twin">Twin</option>
+                  <option value="family">Family</option>
                 </select>
               </div>
             </div>
@@ -252,7 +234,7 @@
 
 
               <div class="aa-single-filter-search">
-                <span>TOTAL PRICE (£)</span>
+                <span>Room price per night (£)</span>
                 <span>FROM</span>
                 <span id="skip-value-lower" class="example-val">30.00</span>
                 <span>TO</span>
@@ -270,35 +252,18 @@
             <div class="col-md-6">
               <div class="aa-single-filter-search">
                 <form>
-                  <label>Check-in: </label>
-                  <input type="date" id='check-in-input'/> </br>
-                  <label>Check-out: </label>
-                  <input type="date" id='check-out-input'/>
+                  <label>&nbsp;Check in:&nbsp;&nbsp;</label>
+                  <input type="date" id='check-in-input' required/></br>
+                  <label>Check out: </label>
+                  <input type="date" id='check-out-input' required/>
                 </form>
-                <div>Count as:
-                  <span id='span-nb-nights'>1</span> night(s)
+                <div>
+                  Number of nights: <span id='span-nb-nights'>1</span>
                 </div>
 
 
               </div>
             </div>
-
-
-
-            <!--
-           <div class="col-md-6">
-             <div class="aa-single-filter-search">
-               <span>TOTAL PRICE ($)</span>
-               <span>FROM</span>
-               <span id="skip-value-lower2" class="example-val">30.00</span>
-               <span>TO</span>
-               <span id="skip-value-upper2" class="example-val">100.00</span>
-               <div id="aa-price-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-               </div>
-             </div>
-           </div> -->
-
-
 
           </div>
         </div>
@@ -313,20 +278,16 @@
   <div class="container">
     <div class="aa-latest-property-area">
       <div class="aa-title">
-        <h2>Hotel Selection</h2>
+        <h2 id="title-hotel-selection-part">Hotel Selection</h2>
         <span></span>
         <p>Whatever accommodation you’re looking for, we’ve got it…</p>
         <p id="nb-results"></p>
         <span></span>
       </div>
       <div class="aa-latest-properties-content">
-        <div class="row" id='div-display-hotel'>
 
-          <!-- Hotels appear here -->
-
-
-
-        </div>
+        <div id='div-sorting-option'> </div>
+        <div class="row" id='div-display-hotel'> <!-- Hotels appear here --></div>
       </div>
     </div>
   </div>
@@ -352,13 +313,13 @@
                   <span></span>
                 </div>
                 <p>
-                  Established in 1996 in Edinburgh, Hotel Booking is one of the largest hotel booking companies in the world. We employ more than 30 employees in more than 5 countries worldwide. Our mission is to:
+                  Established in 1996 in Edinburgh, Paris Booking is one of the largest hotel booking companies in the world. We employ more than 30 employees in more than 5 countries worldwide. Our mission is to:
                 <ul>
-                  <li>Empower people to experience the world.</li>
+                  <li>Empower people to experience the unique beauty of Paris.</li>
                   <li>Connect travellers with the world’s largest selection of incredible places to stay in Paris, including everything from apartments, vacation homes, and family-run B&Bs to 5-star luxury resorts.
                 </ul>
 
-                Each day, more than 2,000 room nights are reserved on our platform. So whether travelling for business or leisure, customers can instantly book their ideal accommodation quickly and easily with Hotel Booking, without booking fees. Via our customer experience team, customers can reach us for assistance any time of the day or night.
+                Each day, more than 2,000 room nights are reserved on our platform. So whether travelling for business or leisure, customers can instantly book their ideal accommodation quickly and easily with Paris Booking, without the hassle of creating an account. Via our customer experience team, customers can reach us for assistance any time of the day or night.
 
 
 
@@ -392,7 +353,7 @@
                     <span class="fa fa-home"></span>
                   </div>
                   <div class="aa-single-service-content">
-                    <h4><a href="#">Large Catalog</a></h4>
+                    <h4><a href="#">Large Catalogue</a></h4>
                     <p>We offer a large set of amazing hotel including scenic lookouts, marinas and famous hotels.</p>
                   </div>
                 </div>
@@ -453,372 +414,9 @@
     </div>
   </div>
 </section>
-<!-- / Promo Banner Section -->
-
-<!--
-<section id="aa-agents">
-<div class="container">
-<div class="row">
-  <div class="col-md-12">
-    <div class="aa-agents-area">
-      <div class="aa-title">
-        <h2>Our Agents</h2>
-        <span></span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
-      </div>
-
-      <div class="aa-agents-content">
-        <ul class="aa-agents-slider">
-          <li>
-            <div class="aa-single-agents">
-              <div class="aa-agents-img">
-                <img src="img/agents/agent-1.png" alt="agent member image">
-              </div>
-              <div class="aa-agetns-info">
-                <h4><a href="#">Philip Smith</a></h4>
-                <span>Top Agent</span>
-                <div class="aa-agent-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="aa-single-agents">
-              <div class="aa-agents-img">
-                <img src="img/agents/agent-5.png" alt="agent member image">
-              </div>
-              <div class="aa-agetns-info">
-                <h4><a href="#">Adam Barney</a></h4>
-                <span>Expert Agent</span>
-                <div class="aa-agent-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="aa-single-agents">
-              <div class="aa-agents-img">
-                <img src="img/agents/agent-3.png" alt="agent member image">
-              </div>
-              <div class="aa-agetns-info">
-                <h4><a href="#">Paul Walker</a></h4>
-                <span>Director</span>
-                <div class="aa-agent-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="aa-single-agents">
-              <div class="aa-agents-img">
-                <img src="img/agents/agent-4.png" alt="agent member image">
-              </div>
-              <div class="aa-agetns-info">
-                <h4><a href="#">John Smith</a></h4>
-                <span>Jr. Agent</span>
-                <div class="aa-agent-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </li>
-           <li>
-            <div class="aa-single-agents">
-              <div class="aa-agents-img">
-                <img src="img/agents/agent-1.png" alt="agent member image">
-              </div>
-              <div class="aa-agetns-info">
-                <h4><a href="#">Philip Smith</a></h4>
-                <span>Top Agent</span>
-                <div class="aa-agent-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="aa-single-agents">
-              <div class="aa-agents-img">
-                <img src="img/agents/agent-5.png" alt="agent member image">
-              </div>
-              <div class="aa-agetns-info">
-                <h4><a href="#">Adam Barney</a></h4>
-                <span>Expert Agent</span>
-                <div class="aa-agent-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="aa-single-agents">
-              <div class="aa-agents-img">
-                <img src="img/agents/agent-3.png" alt="agent member image">
-              </div>
-              <div class="aa-agetns-info">
-                <h4><a href="#">Paul Walker</a></h4>
-                <span>Director</span>
-                <div class="aa-agent-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="aa-single-agents">
-              <div class="aa-agents-img">
-                <img src="img/agents/agent-4.png" alt="agent member image">
-              </div>
-              <div class="aa-agetns-info">
-                <h4><a href="#">John Smith</a></h4>
-                <span>Jr. Agent</span>
-                <div class="aa-agent-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
--->
 
 
-<!--
-<section id="aa-client-testimonial">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="aa-client-testimonial-area">
-          <div class="aa-title">
-            <h2>What Client Say</h2>
-            <span></span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eaque quas debitis animi ipsum, veritatis!</p>
-          </div>
-
-          <div class="aa-testimonial-content">
-
-            <ul class="aa-testimonial-slider">
-              <li>
-                <div class="aa-testimonial-single">
-                  <div class="aa-testimonial-img">
-                    <img src="img/testimonial-1.png" alt="testimonial img">
-                  </div>
-                  <div class="aa-testimonial-info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                  </div>
-                  <div class="aa-testimonial-bio">
-                    <p>David Muller</p>
-                    <span>Web Designer</span>
-                  </div>
-                </div>
-              </li>
-               <li>
-                <div class="aa-testimonial-single">
-                  <div class="aa-testimonial-img">
-                    <img src="img/testimonial-3.png" alt="testimonial img">
-                  </div>
-                  <div class="aa-testimonial-info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                  </div>
-                  <div class="aa-testimonial-bio">
-                    <p>David Muller</p>
-                    <span>Web Designer</span>
-                  </div>
-                </div>
-              </li>
-               <li>
-                <div class="aa-testimonial-single">
-                  <div class="aa-testimonial-img">
-                    <img src="img/testimonial-2.png" alt="testimonial img">
-                  </div>
-                  <div class="aa-testimonial-info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                  </div>
-                  <div class="aa-testimonial-bio">
-                    <p>David Muller</p>
-                    <span>Web Designer</span>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="aa-client-brand">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="aa-client-brand-area">
-          <ul class="aa-client-brand-slider">
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-1.png" alt="brand image">
-              </div>
-            </li>
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-2.png" alt="brand image">
-              </div>
-            </li>
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-3.png" alt="brand image">
-              </div>
-            </li>
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-5.png" alt="brand image">
-              </div>
-            </li>
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-4.png" alt="brand image">
-              </div>
-            </li>
-             <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-1.png" alt="brand image">
-              </div>
-            </li>
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-2.png" alt="brand image">
-              </div>
-            </li>
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-3.png" alt="brand image">
-              </div>
-            </li>
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-5.png" alt="brand image">
-              </div>
-            </li>
-            <li>
-              <div class="aa-client-single-brand">
-                <img src="img/client-brand-4.png" alt="brand image">
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- -->
-
-<!--
-<section id="aa-latest-blog">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="aa-latest-blog-area">
-          <div class="aa-title">
-            <h2>Latest News</h2>
-            <span></span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe magni, est harum repellendus. Accusantium, nostrum!</p>
-          </div>
-          <div class="aa-latest-blog-content">
-            <div class="row">
-
-              <div class="col-md-4">
-                <article class="aa-blog-single">
-                  <figure class="aa-blog-img">
-                    <a href="#"><img src="img/blog-img-1.jpg" alt="img"></a>
-                    <span class="aa-date-tag">15 April, 16</span>
-                  </figure>
-                  <div class="aa-blog-single-content">
-                    <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                    <div class="aa-blog-single-bottom">
-                      <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                      <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                    </div>
-                  </div>
-
-                </article>
-              </div>
-
-              <div class="col-md-4">
-                <article class="aa-blog-single">
-                  <figure class="aa-blog-img">
-                    <a href="#"><img src="img/blog-img-2.jpg" alt="img"></a>
-                    <span class="aa-date-tag">15 April, 16</span>
-                  </figure>
-                  <div class="aa-blog-single-content">
-                    <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                    <div class="aa-blog-single-bottom">
-                      <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                      <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="col-md-4">
-                <article class="aa-blog-single">
-                  <figure class="aa-blog-img">
-                    <a href="#"><img src="img/blog-img-3.jpg" alt="img"></a>
-                    <span class="aa-date-tag">15 April, 16</span>
-                  </figure>
-                  <div class="aa-blog-single-content">
-                    <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                    <div class="aa-blog-single-bottom">
-                      <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                      <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- -->
-
-<!-- The Modal -->
+<!-- The Modal for reviews-->
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
@@ -833,7 +431,7 @@
 
 </div>
 
-<!-- The Modal -->
+<!-- The Modal for booking-->
 <div id="modal-book" class="modal">
 
   <!-- Modal content -->
@@ -844,7 +442,7 @@
     <div style="width: 100%; overflow: hidden; min-height: 420px" class='border-booking-content'>
 
       <div>
-      <div style="width: 25%; height: 375px; float: left; padding-top: 2%; padding-left: 2%;">
+      <div style="width: 35%; height: 375px; float: left; padding-top: 2%; padding-left: 2%;">
         <div id="map" style="border-radius: 25px; width:100%; height: 100%; position: relative; overflow: hidden; margin: 0px; padding: 0px;"></div>
       </div>
 
@@ -853,7 +451,7 @@
       </div>
       </div>
 
-      <div style="margin-left: 52%; background: white; min-height: 375px; border-radius: 25px; padding: 10px;">
+      <div style="margin-left: 62%; background: white; min-height: 375px; border-radius: 25px; padding: 10px;">
         <div id='div-booking-modal'></div>
         <div id='div-booking-button'></div>
       </div>
@@ -877,7 +475,8 @@
                 <p>Copyright © 1996–2019 HotelBooking.com™. All rights reserved.</p>
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
+
+             <!-- <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="aa-footer-middle">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -885,6 +484,7 @@
                 <a href="#"><i class="fa fa-youtube"></i></a>
               </div>
             </div>
+
             <div class="col-md-6 col-sm-12 col-xs-12">
               <div class="aa-footer-right">
                 <a href="#">Home</a>
@@ -894,6 +494,8 @@
                 <a href="#">Privacy & Term</a>
               </div>
             </div>
+            -->
+
           </div>
         </div>
       </div>
@@ -920,8 +522,8 @@
 <!-- Custom js -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/hotel_list.js"></script>
 <script src="js/autocomplete.js"></script>
+<script src="js/hotel_list.js"></script>
 <!-- Loading the API from GOOGLE -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUTJCkdYZxr1Y_WMZTpJzcg7jI_JlyxJI"></script>
 
